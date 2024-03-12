@@ -1,6 +1,8 @@
 //chiediamo all'utente di inserire una parola
 const word = prompt("inserisci una parola")
 
+let result = ""
+
 
 //creare una funzione per capire se la parola inserita dall'utente è palindroma  
 
@@ -14,11 +16,14 @@ function isPalindrome (word){
  
         //SE una lettera della prima metà della parola è uguale alla sua corrispondente nella seconda metà
         if (word[i] === word[wordLength - 1 - i]){
+            result = "La parola è palindroma"
             //la funziona ci restituirà true 
-            return "The word is palindrome"
+            return true
+            
         }else{
             //altrimenti ci restituirà false
-            return "The word is not palindrome"
+            result = "La parola non è palindroma"
+            return false
         }
 
     }
@@ -28,4 +33,4 @@ function isPalindrome (word){
 const checkPalindrome = isPalindrome(word)
 
 //stampo in console un messaggio per comunicare all'utente il risultato del controllo    
-console.log(checkPalindrome)
+console.log(result)
